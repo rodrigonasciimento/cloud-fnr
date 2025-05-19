@@ -16,6 +16,9 @@ Este é um sistema simples e intuitivo para consulta de CEPs e endereços utiliz
 🔧 Tecnologias Utilizadas
 
 HTML5 – Estruturação do conteúdo
+
 CSS3 – Estilização com layout responsivo e design moderno
+
 JavaScript – Lógica de interação com a API e manipulação do DOM
+
 API ViaCEP – Fonte de dados de CEPs brasileiros

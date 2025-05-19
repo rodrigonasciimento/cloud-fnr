@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- Define o charset e responsividade -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Consulta de Endereço</title>
+  <!-- Importa a fonte Roboto do Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto :wght@400;700&display=swap" rel="stylesheet">
+  <!-- Importa o CSS personalizado -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <div class="container">
+    <h2>Consultar Endereço</h2>
+
+    <!-- Abas de navegação para alternar entre busca por CEP e por Rua -->
+    <nav class="tabs">
+      <button class="tab active" data-tab="cep">Buscar por CEP</button>
+      <button class="tab" data-tab="rua">Buscar por Rua</button>
+    </nav>
+
+    <!-- Formulário para busca por CEP -->
+    <form id="form-cep" class="form-section active" onsubmit="buscarCEP(event)">
+      <label for="cep">Digite o CEP:</label>
+      <input type="text" id="cep" placeholder="Exemplo: 01001000" maxlength="8" required />
+      <button type="submit">Buscar</button>
+    </form>
+
+    <!-- Formulário para busca por Rua, Cidade e Estado -->
+    <form id="form-rua" class="form-section" onsubmit="buscarRuaPorEndereco(event)">
+      <label for="logradouro">Nome da Rua:</label>
+      <input type="text" id="logradouro" placeholder="Exemplo: Rua Augusta" required />
+
+      <label for="cidade">Cidade:</label>
+      <input type="text" id="cidade" placeholder="Exemplo: São Paulo" required />
+
+      <label for="estado">Estado (UF):</label>
+      <input type="text" id="estado" placeholder="Exemplo: SP" maxlength="2" required />
+
+      <button type="submit">Buscar Rua</button>
+    </form>
+
+    <!-- Dropdown para mostrar múltiplos resultados de busca por rua -->
+    <div id="resultados-container" class="hidden">
+      <label for="select-resultados">Selecione um resultado:</label>
+      <select id="select-resultados" onchange="mostrarDetalhes(this.value)"></select>
+    </div>
+
+    <!-- Área para exibir o resultado final da busca -->
+    <div class="result" id="result"></div>
+  </div>
+
+  <!-- Importa o JavaScript principal -->
+  <script src="js/script.js"></script>
+</body>
+</html>
